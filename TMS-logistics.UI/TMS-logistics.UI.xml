@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TMS-logistics.UI</name>
+    </assembly>
+    <members>
+        <member name="F:TMS_logistics.Ui.Controllers.BasicsCarController.m_logger">
+            <summary>
+            日志器
+            </summary>
+        </member>
+        <member name="F:TMS_logistics.Ui.Controllers.BasicsCarController.m_LoggerFactory">
+            <summary>
+            日志器工厂
+            </summary>
+        </member>
+        <member name="M:TMS_logistics.Ui.Controllers.BasicsCarController.drivershow1(System.String,System.String)">
+            <summary>
+            货主管理显示
+            </summary>
+            <param name="driverName">货主名称</param>
+            <param name="driverPhone">货主手机号</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_logistics.Ui.Controllers.BasicsCarController.driverdel(System.Int32)">
+            <summary>
+            货主管理删除
+            </summary>
+            <param name="driverId">货主管理Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_logistics.Ui.Controllers.BasicsCarController.driveradd(TMS_logistics.Model.Driver)">
+            <summary>
+            货主管理添加
+            </summary>
+            <param name="car"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_logistics.Ui.Controllers.BasicsCarController.driverfan(System.Int32)">
+            <summary>
+            货主管理回显
+            </summary>
+            <param name="driverId">货主管理Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_logistics.Ui.Controllers.BasicsCarController.driverbian(TMS_logistics.Model.Driver)">
+            <summary>
+            货主管理编辑
+            </summary>
+            <param name="car"></param>
+            <returns></returns>
+        </member>
+        <member name="F:TMS_logistics.Ui.Controllers.RoleController.m_logger">
+            <summary>
+            日志器
+            </summary>
+        </member>
+        <member name="F:TMS_logistics.Ui.Controllers.RoleController.m_LoggerFactory">
+            <summary>
+            日志器工厂
+            </summary>
+        </member>
+        <member name="M:TMS_logistics.Ui.Controllers.RoleController.roleshow(System.Int32)">
+            <summary>
+            一级菜单
+            </summary>
+            <param name="RoleId">角色id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_logistics.Ui.Controllers.RoleController.roleshow1(System.Int32,System.Int32)">
+            <summary>
+            二级菜单
+            </summary>
+            <param name="RoleId">角色id</param>
+            <param name="Pid">子类id</param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_logistics.UI.Controllers.LoginController.Loginshow(System.String,System.String)">
+            <summary>
+            登录
+            </summary>
+            <param name="UserName">用户名称</param>
+            <param name="UserMima">用户密码</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

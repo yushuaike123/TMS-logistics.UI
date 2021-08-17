@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TMS_logistics.IDAL</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TMS-logistics.Common\TMS-logistics.Common.csproj" />
+    <ProjectReference Include="..\TMS-logistics.Model\TMS-logistics.Model.csproj" />
+  </ItemGroup>
+
+</Project>

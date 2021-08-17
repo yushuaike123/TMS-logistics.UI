@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TMS_logistics.DAL</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="MySql.Data" Version="8.0.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TMS-logistics.Common\TMS-logistics.Common.csproj" />
+    <ProjectReference Include="..\TMS-logistics.IDAL\TMS-logistics.IDAL.csproj" />
+    <ProjectReference Include="..\TMS-logistics.Model\TMS-logistics.Model.csproj" />
+  </ItemGroup>
+
+</Project>

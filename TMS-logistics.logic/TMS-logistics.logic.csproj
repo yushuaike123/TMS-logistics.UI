@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>TMS_logistics.logic</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TMS-logistics.DAL\TMS-logistics.DAL.csproj" />
+    <ProjectReference Include="..\TMS-logistics.IDAL\TMS-logistics.IDAL.csproj" />
+    <ProjectReference Include="..\TMS-logistics.Model\TMS-logistics.Model.csproj" />
+  </ItemGroup>
+
+</Project>
