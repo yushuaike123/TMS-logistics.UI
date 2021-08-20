@@ -7,7 +7,7 @@ using TMS_logistics.Model;
 
 namespace TMS_logistics.IDAL
 {
-  public interface Irole:Imenu<Userrole>
+  public interface Ifunction:Imenu<Function>
   {
 
   }

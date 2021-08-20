@@ -8,7 +8,7 @@ using TMS_logistics.Model;
 
 namespace TMS_logistics.DAL
 {
-  public class role:menu<Role>,Irole
+  public class role:menu<Userrole>,Irole
   {
 
   }

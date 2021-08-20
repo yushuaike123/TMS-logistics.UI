@@ -20,12 +20,13 @@ namespace TMS_logistics.Ui
 
     public static IHostBuilder CreateHostBuilder(string[] args)
     {
-
+      
       var builder = Host.CreateDefaultBuilder(args)
             //添加Autofac服务
             .UseServiceProviderFactory(new AutofacServiceProviderFactory())
             .ConfigureWebHostDefaults(webBuilder =>
             {
+              //进入 Startup类
               webBuilder.UseStartup<Startup>();
             });
       //使用NLog作为日志记录

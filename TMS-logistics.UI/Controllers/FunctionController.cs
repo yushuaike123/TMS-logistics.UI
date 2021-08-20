@@ -1,11 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,9 +12,9 @@ using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace TMS_logistics.Ui.Controllers
 {
-  [Route("Role")]
+  [Route("Function")]
   [ApiController]
-  public class RoleController : Controller
+  public class FunctionController : Controller
   {
     /// <summary>
     /// 日志器
@@ -29,28 +25,28 @@ namespace TMS_logistics.Ui.Controllers
     /// </summary>
     private ILoggerFactory m_LoggerFactory;
 
-    public BasicsJuese BasicsJuese;
-    public RoleController(BasicsJuese BasicsJuese1, ILoggerFactory loggerFactory)
+    public BasicsErji BasicsErji;
+    public FunctionController(BasicsErji BasicsErji1, ILoggerFactory loggerFactory)
     {
-      BasicsJuese = BasicsJuese1;
+      BasicsErji = BasicsErji1;
 
       m_LoggerFactory = loggerFactory;
       //// 获取指定名字的日志器
       m_logger = m_LoggerFactory.CreateLogger("AppLogger");
     }
     /// <summary>
-    /// 一级菜单
+    /// 二级菜单
     /// </summary>
-    /// <param name="UserId">角色id</param>
+    /// <param name="Pid">子类id</param>
     /// <returns></returns>
-    [Route(nameof(roleshow))]
+    [Route(nameof(functionshow))]
     [HttpGet]
-    public IActionResult roleshow(int UserId)
+    public IActionResult functionshow(int Pid)
     {
       //异常处理
       try
       {
-        List<Userrole> BasicsJuesea = BasicsJuese.roleshow(UserId);
+        List<Function> BasicsJuesea = BasicsErji.functionshow(Pid);
         if (BasicsJuesea != null)
         {
           return Ok(BasicsJuesea);
@@ -67,6 +63,5 @@ namespace TMS_logistics.Ui.Controllers
         throw;
       }
     }
-
-    }
+  }
 }

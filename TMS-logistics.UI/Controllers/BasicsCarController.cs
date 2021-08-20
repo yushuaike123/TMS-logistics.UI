@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -40,6 +41,7 @@ namespace TMS_logistics.Ui.Controllers
     /// <param name="driverName">货主名称</param>
     /// <param name="driverPhone">货主手机号</param>
     /// <returns></returns>
+    [Authorize]
     [Route(nameof(drivershow1))]
     [HttpGet]
     public IActionResult drivershow1(string driverName, string driverPhone)
@@ -48,10 +50,23 @@ namespace TMS_logistics.Ui.Controllers
       try
       {
         List<Driver> BasicsCara = BasicsCar.Drivershow(driverName, driverPhone);
-        if (BasicsCara != null)
-        {
-          HttpContext.Session.SetString("name", driverName);
-        }
+        return Ok(BasicsCara);
+
+      }
+      catch (Exception ex)
+      {
+        m_logger.LogError(ex, "捕捉到测试异常");
+        throw;
+      }
+    }
+    [Route(nameof(drivershow11))]
+    [HttpGet]
+    public IActionResult drivershow11()
+    {
+      //异常处理
+      try
+      {
+        List<Driver> BasicsCara = BasicsCar.Drivershow1();
         return Ok(BasicsCara);
 
       }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TMS_logistics.Model;
+using TMS_logistics.IDAL;
 
-namespace TMS_logistics.IDAL
+namespace TMS_logistics.DAL
 {
-  public interface Irole:Imenu<Userrole>
+  public class function:menu<Function>,Ifunction
   {
 
   }

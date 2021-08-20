@@ -20,41 +20,22 @@ namespace TMS_logistics.logic
     /// <summary>
     /// 查询一级菜单
     /// </summary>
-    /// <param name="RoleId">角色id</param>
+    /// <param name="UserId">角色id</param>
     /// <returns></returns>
-    public List<Role> roleshow(int RoleId)
+    public List<Userrole> roleshow(int UserId)
     {
       //异常处理
       try
       {
-        string sql = $"select role.RoleName,function.FunctionName,function.Pid from role join rolefunction on role.RoleId = rolefunction.RoleId join function on function.FunctionId = rolefunction.FunctionId where role.RoleId = {RoleId} and function.Pid = 0";
+        string sql = $"SELECT C.functIonId,C.FunctionName,C.functionUrl,C.pid FROM userrole A JOIN  rolefunction B ON A.RoleId=B.RoleId JOIN `function` C ON C.functionId = B.Functionid JOIN user D on A.UserId = D.UserId WHERE C.Pid=0 AND A.UserId={UserId}";
 
-        return Irole.GetT_Dapper(sql, RoleId).ToList();
+        return Irole.GetT_Dapper(sql, UserId).ToList();
       }
       catch (Exception)
       {
         throw;
       }
     }
-    /// <summary>
-    /// 查询二级菜单
-    /// </summary>
-    /// <param name="RoleId">角色id</param>
-    /// <param name="Pid">子类id</param>
-    /// <returns></returns>
-    public List<Role> roleshow1(int RoleId,int Pid)
-    {
-      //异常处理
-      try
-      {
-        string sql = $"select role.RoleName,function.FunctionName,function.Pid from role join rolefunction on role.RoleId = rolefunction.RoleId join function on function.FunctionId = rolefunction.FunctionId where role.RoleId = {RoleId} and function.Pid = {Pid}";
-
-        return Irole.GetT_Dapper(sql, RoleId, Pid).ToList();
-      }
-      catch (Exception)
-      {
-        throw;
-      }
-    }
+    
   }
 }

@@ -33,6 +33,20 @@ namespace TMS_logistics.logic
         throw;
       }
     }
+    //存储过程
+    public List<Driver> Drivershow1()
+    {
+      //异常处理
+      try
+      {
+        string sql = $"select * from driver";
+        return Idriver.GetT_Dapper(sql).ToList();
+      }
+      catch (Exception)
+      {
+        throw;
+      }
+    }
     //删除
     public int Driverdel(int driverId)
     {
